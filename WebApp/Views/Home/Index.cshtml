@@ -1,0 +1,38 @@
+﻿
+@model IEnumerable<WebApp.Models.barangModel>
+
+@{
+    ViewBag.Title = "List Barang";
+}
+
+<br />
+
+<form method="get" action="">
+    <input type="text" name="pencarian" placeholder="masukan kata kunci" />
+    <button type="submit">Cari</button>
+</form>
+<br />
+
+
+<table class="table">
+    <tr>
+        <td>Produk ID</td>
+        <td>Produk Name</td>
+        <td>Price</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.product_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.produkName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+        </tr>
+    }
+
+</table>
